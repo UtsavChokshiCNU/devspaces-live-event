@@ -10,7 +10,7 @@ OUTPUT_FILE = "output.txt"
 # Read the input message
 # Note: This currently reads the test input.
 #       Your solution will be evaluated using INPUT_FILE
-text = File.read(TEST_INPUT_FILE).chomp
+text = File.read(INPUT_FILE).chomp
 # Use this for the real solution
 #text = File.read(INPUT_FILE).chomp
 
@@ -28,7 +28,9 @@ text = File.read(TEST_INPUT_FILE).chomp
 #       solving problems like this.
 #       https://tinyurl.com/y7grbrs4
 #
-decrypted_text = ceasar_cipher_decrypt(text, -3)
+
+reverse_text = text.reverse
+decrypted_text = ceasar_cipher_decrypt(reverse_text, -88)
 
 # Write the decrypted message to the output file
 File.open(OUTPUT_FILE, "w") { |f| f.write decrypted_text }
